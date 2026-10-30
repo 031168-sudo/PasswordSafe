@@ -14,21 +14,29 @@
         android:pathData="M24,2 H84 A22,22 0 0,1 106,24 V84 A22,22 0 0,1 84,106 H24 A22,22 0 0,1 2,84 V24 A22,22 0 0,1 24,2 Z" />
 
     <group android:scaleX="1.25" android:scaleY="1.25" android:pivotX="54" android:pivotY="54">
-        <path android:strokeColor="#6B5B73" android:strokeWidth="3.2" android:strokeLineCap="round"
-            android:strokeLineJoin="round"
-            android:pathData="M42.4,52 L41.6,42.5 Q41.4,30.5 53.6,30 Q66.4,29.6 66.2,42 L66,52" />
+        <path android:fillColor="#6B5B73" android:pathData="M36,76 L36,80 Q36,81 37,81 L41,81 Q42,81 42,80 L42,76 Z M66,76 L66,80 Q66,81 67,81 L71,81 Q72,81 72,80 L72,76 Z" />
+        <path android:strokeColor="#6B5B73" android:strokeWidth="3" android:strokeLineCap="round"
+            android:pathData="M30.6,42 L30.6,49 M30.6,59 L30.6,66" />
         <path android:fillColor="#A8D8EA" android:strokeColor="#6B5B73" android:strokeWidth="2.8"
-            android:strokeLineJoin="round"
-            android:pathData="M35.4,55.6 Q34.6,50.4 41,50.6 L67.6,49.8 Q73.4,50.2 73.2,56.4 L73.6,73.8 Q73.2,80.4 66.8,80.2 L41.2,80.6 Q34.8,80.2 35.2,74 Z" />
-        <path android:strokeColor="#FFFFFF" android:strokeWidth="2.4" android:strokeLineCap="round"
-            android:pathData="M40,57.5 q-1.2,5 0.4,9.5" />
-        <path android:fillColor="#6B5B73"
-            android:pathData="M54,63 m-3.6,0 a3.6,3.6 0 1,0 7.2,0 a3.6,3.6 0 1,0 -7.2,0" />
-        <path android:fillColor="#6B5B73"
-            android:pathData="M52.6,63.5 L55.4,63.6 L56.6,72.4 L51.4,72.2 Z" />
+            android:strokeLineJoin="round" android:pathData="M31.8,34.4 Q31.2,32.6 35,33.2 L73.6,33.4 Q77.4,33.2 77,37.2 L76.6,73.6 Q77,77.2 73,77 L35.4,76.6 Q31.2,77.2 31.6,72.8 Z" />
+        <path android:fillColor="#8FCDEA" android:strokeColor="#6B5B73" android:strokeWidth="2.2"
+            android:strokeLineJoin="round" android:pathData="M37.6,39.6 Q37.4,38.2 39,38.2 L68.4,38.2 Q70,38.2 69.8,39.8 L69.6,70.6 Q70,72 68.4,71.8 L39,71.6 Q37.4,71.8 37.6,70.2 Z" />
+        <path android:fillColor="#6B5B73" android:pathData="M41,44 m-1.2,0 a1.2,1.2 0 1,0 2.4,0 a1.2,1.2 0 1,0 -2.4,0" />
+        <path android:fillColor="#6B5B73" android:pathData="M66,44 m-1.2,0 a1.2,1.2 0 1,0 2.4,0 a1.2,1.2 0 1,0 -2.4,0" />
+        <path android:fillColor="#6B5B73" android:pathData="M41,66 m-1.2,0 a1.2,1.2 0 1,0 2.4,0 a1.2,1.2 0 1,0 -2.4,0" />
+        <path android:fillColor="#6B5B73" android:pathData="M66,66 m-1.2,0 a1.2,1.2 0 1,0 2.4,0 a1.2,1.2 0 1,0 -2.4,0" />
+        <path android:fillColor="#F0B44A" android:strokeColor="#6B5B73" android:strokeWidth="2.6"
+            android:pathData="M51,55 m-9,0 a9,9 0 1,0 18,0 a9,9 0 1,0 -18,0" />
+        <path android:fillColor="#6B5B73" android:pathData="M51,55 m-1.6,0 a1.6,1.6 0 1,0 3.2,0 a1.6,1.6 0 1,0 -3.2,0" />
+        <!-- Деления внутри диска -->
+        <path android:strokeColor="#6B5B73" android:strokeWidth="1.6" android:strokeLineCap="round"
+            android:pathData="M56.99,56.60 L58.53,57.02 M55.38,59.38 L56.52,60.52 M52.60,60.99 L53.02,62.53 M49.40,60.99 L48.98,62.53 M46.62,59.38 L45.48,60.52 M45.01,56.60 L43.47,57.02 M45.01,53.40 L43.47,52.98 M46.62,50.62 L45.48,49.48 M49.40,49.01 L48.98,47.47 M52.60,49.01 L53.02,47.47 M55.38,50.62 L56.52,49.48 M56.99,53.40 L58.53,52.98" />
+        <path android:strokeColor="#6B5B73" android:strokeWidth="3" android:strokeLineCap="round"
+            android:pathData="M60,55 L68.6,55" />
+        <path android:fillColor="#6B5B73" android:pathData="M68.6,55 m-1.8,0 a1.8,1.8 0 1,0 3.6,0 a1.8,1.8 0 1,0 -3.6,0" />
         <path android:fillColor="#FFD98A"
-            android:pathData="M78,34 Q79,37 82,38 Q79,39 78,42 Q77,39 74,38 Q77,37 78,34 Z" />
+            android:pathData="M26,44 Q26.7,46.2 29,47 Q26.7,47.8 26,50 Q25.3,47.8 23,47 Q25.3,46.2 26,44 Z" />
         <path android:fillColor="#FFD98A"
-            android:pathData="M29,40 Q29.7,42.2 32,43 Q29.7,43.8 29,46 Q28.3,43.8 26,43 Q28.3,42.2 29,40 Z" />
+            android:pathData="M84,50 Q84.7,52.2 87,53 Q84.7,53.8 84,56 Q83.3,53.8 81,53 Q83.3,52.2 84,50 Z" />
     </group>
 </vector>
