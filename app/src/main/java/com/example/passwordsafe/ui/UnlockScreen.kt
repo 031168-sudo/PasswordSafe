@@ -218,7 +218,7 @@ fun UnlockScreen(
             Spacer(Modifier.height(56.dp))
             AppLogo()
             Spacer(Modifier.height(20.dp))
-            Text("Сейф паролей", style = MaterialTheme.typography.headlineMedium)
+            Text("Пароли", style = MaterialTheme.typography.headlineMedium)
             Spacer(Modifier.height(6.dp))
             Text(
                 subtitle ?: "Совместим с Password Safe (.psafe3)",

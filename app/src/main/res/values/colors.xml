@@ -1,6 +1,4 @@
 <resources>
     <color name="bg">#F4F6FB</color>
-    <color name="icon_bg_start">#1B2A4A</color>
-    <color name="icon_bg_end">#0E1626</color>
     <color name="mint">#3DDC97</color>
 </resources>

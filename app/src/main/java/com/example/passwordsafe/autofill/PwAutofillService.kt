@@ -49,7 +49,7 @@ class PwAutofillService : AutofillService() {
             PendingIntent.FLAG_CANCEL_CURRENT or PendingIntent.FLAG_MUTABLE,
         )
         val auth = Dataset.Builder(
-            presentation(this, "Сейф паролей", if (db == null) "Разблокировать и выбрать запись" else "Выбрать другую запись"),
+            presentation(this, "Пароли", if (db == null) "Разблокировать и выбрать запись" else "Выбрать другую запись"),
         )
         form.allIds.forEach { auth.setValue(it, null) }
         auth.setAuthentication(pi.intentSender)

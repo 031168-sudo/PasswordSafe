@@ -46,7 +46,7 @@ object Vault {
     val lockMessage = MutableStateFlow<String?>(null)
 
     private val mutex = Mutex()
-    private val appTag get() = "Сейф паролей Android ${BuildConfig.VERSION_NAME}"
+    private val appTag get() = "Пароли Android ${BuildConfig.VERSION_NAME}"
 
     val isOpen get() = _session.value != null
 

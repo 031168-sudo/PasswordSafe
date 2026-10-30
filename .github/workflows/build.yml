@@ -45,4 +45,4 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           TAG=v1.0.${GITHUB_RUN_NUMBER}
-          gh release create "$TAG" out/*.apk --title "Сейф паролей $TAG" --notes "Сборка из main, коммит ${GITHUB_SHA::7}"
+          gh release create "$TAG" out/*.apk --title "Пароли $TAG" --notes "Сборка из main, коммит ${GITHUB_SHA::7}"

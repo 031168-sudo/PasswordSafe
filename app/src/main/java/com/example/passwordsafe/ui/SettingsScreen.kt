@@ -175,7 +175,7 @@ fun SettingsScreen(activity: FragmentActivity, onBack: () -> Unit) {
             SectionCard {
                 SettingRow(
                     Icons.Rounded.Info,
-                    "Сейф паролей ${BuildConfig.VERSION_NAME}",
+                    "Пароли ${BuildConfig.VERSION_NAME}",
                     "Формат Password Safe v3 (Twofish-256, HMAC-SHA256). У приложения нет доступа к интернету.",
                     null,
                 )

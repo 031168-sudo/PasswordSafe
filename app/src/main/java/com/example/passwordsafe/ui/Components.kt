@@ -16,10 +16,9 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.Lock
-import androidx.compose.material.icons.rounded.Shield
-import androidx.compose.material3.Icon
+import androidx.compose.foundation.Image
+import androidx.compose.ui.res.painterResource
+import com.example.passwordsafe.R
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -126,24 +125,18 @@ fun SectionCard(modifier: Modifier = Modifier, content: @Composable ColumnScope.
 
 @Composable
 fun AppLogo(size: Dp = 88.dp) {
+    // Тот же замок, что на иконке приложения
     Box(
         Modifier
             .size(size)
             .clip(RoundedCornerShape(size * 0.3f))
-            .background(Brush.linearGradient(listOf(Color(0xFF1B2A4A), Color(0xFF0E1626)))),
+            .background(Color(0xFFE9D5EE)),
         contentAlignment = Alignment.Center,
     ) {
-        Icon(
-            Icons.Rounded.Shield,
+        Image(
+            painterResource(R.drawable.ic_launcher_foreground),
             contentDescription = null,
-            tint = Mint,
-            modifier = Modifier.size(size * 0.6f),
-        )
-        Icon(
-            Icons.Rounded.Lock,
-            contentDescription = null,
-            tint = Color(0xFF0E1626),
-            modifier = Modifier.size(size * 0.26f),
+            modifier = Modifier.size(size * 1.25f),
         )
     }
 }
