@@ -162,6 +162,7 @@ private fun VaultNav(activity: FragmentActivity) {
     val ui = LocalUi.current
     val scope = rememberCoroutineScope()
     val stack = remember { mutableStateListOf<Screen>(Screen.List) }
+    val listUi = remember { ListUiState() }
     fun push(s: Screen) { stack.add(s) }
     fun pop() { if (stack.size > 1) stack.removeAt(stack.lastIndex) }
 
@@ -190,6 +191,7 @@ private fun VaultNav(activity: FragmentActivity) {
     ) { st ->
         when (val s = st.last()) {
             Screen.List -> ListScreen(
+                state = listUi,
                 onOpen = { push(Screen.Detail(it)) },
                 onAdd = { push(Screen.Edit(null)) },
                 onSettings = { push(Screen.Settings) },

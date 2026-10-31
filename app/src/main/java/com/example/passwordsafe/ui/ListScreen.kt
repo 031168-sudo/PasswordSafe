@@ -24,7 +24,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
@@ -60,7 +60,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
-import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -77,6 +77,13 @@ import kotlinx.coroutines.launch
 private const val ALL = "\u0000all"
 private const val NONE = "\u0000none"
 
+/** Состояние списка, которое живёт дольше самого экрана: позиция прокрутки, поиск и группа. */
+class ListUiState {
+    val listState = LazyListState()
+    val query: MutableState<String> = mutableStateOf("")
+    val group: MutableState<String> = mutableStateOf(ALL)
+}
+
 fun urlHost(url: String): String {
     val u = url.trim().substringAfter("://").substringBefore('/').substringBefore('?').substringBefore(':')
     return u.removePrefix("www.")
@@ -84,7 +91,7 @@ fun urlHost(url: String): String {
 
 @OptIn(ExperimentalFoundationApi::class, ExperimentalLayoutApi::class)
 @Composable
-fun ListScreen(onOpen: (String) -> Unit, onAdd: () -> Unit, onSettings: () -> Unit) {
+fun ListScreen(state: ListUiState, onOpen: (String) -> Unit, onAdd: () -> Unit, onSettings: () -> Unit) {
     val ctx = LocalContext.current
     val ui = LocalUi.current
     val scope = rememberCoroutineScope()
@@ -94,12 +101,12 @@ fun ListScreen(onOpen: (String) -> Unit, onAdd: () -> Unit, onSettings: () -> Un
     val s = session ?: return
     val db = s.db
 
-    var query by rememberSaveable { mutableStateOf("") }
-    var group by rememberSaveable { mutableStateOf(ALL) }
+    var query by state.query
+    var group by state.group
     var sortRecent by remember { mutableStateOf(Prefs.sortByRecent) }
     var menu by remember { mutableStateOf(false) }
     var showGenerator by remember { mutableStateOf(false) }
-    val listState = rememberLazyListState()
+    val listState = state.listState
     val expanded by remember { derivedStateOf { listState.firstVisibleItemIndex == 0 } }
 
     val topGroups = remember(rev) {
