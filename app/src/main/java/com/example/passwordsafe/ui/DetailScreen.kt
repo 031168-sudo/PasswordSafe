@@ -115,7 +115,7 @@ fun DetailScreen(id: String, onBack: () -> Unit, onEdit: () -> Unit) {
             verticalArrangement = Arrangement.spacedBy(14.dp),
         ) {
             Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
-                Avatar(r.title, 72.dp)
+                RecordAvatar(r, 72.dp)
                 Spacer(Modifier.height(12.dp))
                 Text(r.title.ifEmpty { "(без названия)" }, style = MaterialTheme.typography.headlineSmall, textAlign = TextAlign.Center)
                 if (r.group.isNotEmpty()) {

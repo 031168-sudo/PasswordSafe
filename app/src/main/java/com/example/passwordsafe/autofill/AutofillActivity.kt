@@ -49,7 +49,7 @@ import androidx.fragment.app.FragmentActivity
 import com.example.passwordsafe.core.PwsRecord
 import com.example.passwordsafe.data.Vault
 import com.example.passwordsafe.ui.AppTheme
-import com.example.passwordsafe.ui.Avatar
+import com.example.passwordsafe.ui.RecordAvatar
 import com.example.passwordsafe.ui.UnlockScreen
 import com.example.passwordsafe.ui.urlHost
 
@@ -165,7 +165,7 @@ class AutofillActivity : FragmentActivity() {
                             .clickable { onPick(r) },
                     ) {
                         Row(Modifier.padding(14.dp), verticalAlignment = Alignment.CenterVertically) {
-                            Avatar(r.title)
+                            RecordAvatar(r)
                             Spacer(Modifier.width(14.dp))
                             Column(Modifier.weight(1f)) {
                                 Text(r.title.ifEmpty { "(без названия)" }, style = MaterialTheme.typography.titleMedium, maxLines = 1, overflow = TextOverflow.Ellipsis)

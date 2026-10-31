@@ -21,6 +21,7 @@ class App : Application() {
     override fun onCreate() {
         super.onCreate()
         Prefs.init(this)
+        com.example.passwordsafe.ui.AppIcons.enabled = Prefs.appIcons
 
         // Автоблокировка: приложение ушло в фон — запускаем таймер, вернулось — отменяем.
         ProcessLifecycleOwner.get().lifecycle.addObserver(object : DefaultLifecycleObserver {

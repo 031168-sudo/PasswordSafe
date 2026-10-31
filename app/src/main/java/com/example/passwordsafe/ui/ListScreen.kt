@@ -330,7 +330,7 @@ private fun RecordRow(
             .clickable(onClick = onClick),
     ) {
         Row(Modifier.padding(start = 14.dp, top = 12.dp, bottom = 12.dp, end = 4.dp), verticalAlignment = Alignment.CenterVertically) {
-            Avatar(r.title)
+            RecordAvatar(r)
             Spacer(Modifier.width(14.dp))
             Column(Modifier.weight(1f)) {
                 Text(r.title.ifEmpty { "(без названия)" }, style = MaterialTheme.typography.titleMedium, maxLines = 1, overflow = TextOverflow.Ellipsis)

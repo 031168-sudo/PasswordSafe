@@ -4,6 +4,13 @@
     <!-- Нет разрешения INTERNET: приложение физически не может отправить пароли в сеть -->
     <uses-permission android:name="android.permission.USE_BIOMETRIC" />
 
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent>
+    </queries>
+
     <application
         android:name=".App"
         android:allowBackup="false"

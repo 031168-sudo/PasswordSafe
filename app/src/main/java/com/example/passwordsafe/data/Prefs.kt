@@ -28,6 +28,10 @@ object Prefs {
         get() = sp.getBoolean("screenoff", true)
         set(v) = sp.edit().putBoolean("screenoff", v).apply()
 
+    var appIcons: Boolean
+        get() = sp.getBoolean("appIcons", true)
+        set(v) = sp.edit().putBoolean("appIcons", v).apply()
+
     var sortByRecent: Boolean
         get() = sp.getBoolean("sortRecent", false)
         set(v) = sp.edit().putBoolean("sortRecent", v).apply()

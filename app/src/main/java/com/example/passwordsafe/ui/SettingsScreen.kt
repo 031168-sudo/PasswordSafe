@@ -21,6 +21,7 @@ import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.rounded.ArrowBack
+import androidx.compose.material.icons.rounded.Apps
 import androidx.compose.material.icons.rounded.Backup
 import androidx.compose.material.icons.rounded.ContentPaste
 import androidx.compose.material.icons.rounded.Description
@@ -143,6 +144,16 @@ fun SettingsScreen(activity: FragmentActivity, onBack: () -> Unit) {
                         bioOn = false
                     }
                 }
+            }
+
+            SectionTitle("Вид")
+            SectionCard {
+                SettingSwitch(
+                    Icons.Rounded.Apps,
+                    "Иконки приложений",
+                    "Показывать у записи иконку установленного приложения: Tuya, Mi Home, банк и т. п.",
+                    AppIcons.enabled,
+                ) { AppIcons.enabled = it; Prefs.appIcons = it }
             }
 
             SectionTitle("Автозаполнение")
