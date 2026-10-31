@@ -5,6 +5,9 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.isImeVisible
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
@@ -12,6 +15,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -78,7 +82,7 @@ fun urlHost(url: String): String {
     return u.removePrefix("www.")
 }
 
-@OptIn(ExperimentalFoundationApi::class)
+@OptIn(ExperimentalFoundationApi::class, ExperimentalLayoutApi::class)
 @Composable
 fun ListScreen(onOpen: (String) -> Unit, onAdd: () -> Unit, onSettings: () -> Unit) {
     val ctx = LocalContext.current
@@ -130,7 +134,9 @@ fun ListScreen(onOpen: (String) -> Unit, onAdd: () -> Unit, onSettings: () -> Un
     Box(Modifier.fillMaxSize()) {
         LazyColumn(
             state = listState,
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier
+                .fillMaxSize()
+                .imePadding(),
             contentPadding = PaddingValues(bottom = 120.dp),
         ) {
             item {
@@ -186,7 +192,7 @@ fun ListScreen(onOpen: (String) -> Unit, onAdd: () -> Unit, onSettings: () -> Un
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(end = 12.dp),
-                        placeholder = { Text("Поиск по названию, логину, сайту…") },
+                        placeholder = { Text("Поиск", maxLines = 1, overflow = TextOverflow.Ellipsis) },
                         leadingIcon = { Icon(Icons.Rounded.Search, null) },
                         trailingIcon = {
                             if (query.isNotEmpty()) IconButton(onClick = { query = "" }) { Icon(Icons.Rounded.Close, "Очистить") }
@@ -275,7 +281,7 @@ fun ListScreen(onOpen: (String) -> Unit, onAdd: () -> Unit, onSettings: () -> Un
             }
         }
 
-        ExtendedFloatingActionButton(
+        if (!WindowInsets.isImeVisible) ExtendedFloatingActionButton(
             onClick = onAdd,
             expanded = expanded,
             icon = { Icon(Icons.Rounded.Add, null) },

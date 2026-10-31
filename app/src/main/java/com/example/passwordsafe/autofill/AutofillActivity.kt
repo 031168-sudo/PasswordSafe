@@ -135,7 +135,7 @@ class AutofillActivity : FragmentActivity() {
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(16.dp),
-                placeholder = { Text("Поиск") },
+                placeholder = { Text("Поиск", maxLines = 1) },
                 leadingIcon = { Icon(Icons.Rounded.Search, null) },
                 singleLine = true,
                 shape = CircleShape,
@@ -154,7 +154,7 @@ class AutofillActivity : FragmentActivity() {
                     modifier = Modifier.padding(horizontal = 24.dp, vertical = 4.dp),
                 )
             }
-            LazyColumn(contentPadding = PaddingValues(bottom = 24.dp)) {
+            LazyColumn(Modifier.weight(1f), contentPadding = PaddingValues(bottom = 24.dp)) {
                 items(list, key = { "r:" + System.identityHashCode(it) }) { r ->
                     Surface(
                         color = MaterialTheme.colorScheme.surfaceContainer,
